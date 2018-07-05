@@ -11,7 +11,6 @@ public class Customer {
 		this.email = email;
 		this.birthYear = birthYear;
 	}
-	
 	public String getName() {
 		return name;
 	}
