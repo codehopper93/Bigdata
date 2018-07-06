@@ -1,6 +1,6 @@
 package com.javaya.controller;
 
-import com.javaya.service.ICustomerService;
+import com.first.aaa.service.ICustomerService;
 
 public class CustomerController {
 //	ICustomerService custService = new CustomerService();

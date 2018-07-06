@@ -1,6 +1,6 @@
+import com.first.aaa.service.CustomerService;
+import com.first.aaa.service.ICustomerService;
 import com.javaya.controller.CustomerController;
-import com.javaya.service.CustomerService;
-import com.javaya.service.ICustomerService;
 
 /************************************************************
  * 시스템 명 : 
@@ -23,6 +23,7 @@ import com.javaya.service.ICustomerService;
  */
 public class CustomerMain {
 	public static void main(String[] args) {
+		
 		ICustomerService custService = new CustomerService();
 		CustomerController custController = new CustomerController();
 		
