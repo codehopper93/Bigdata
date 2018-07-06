@@ -44,7 +44,8 @@ public class CustomerVIPService implements ICustomerService {
 			switch(menu.charAt(0)) {
 			case 'i':
 				System.out.println("고객정보 입력을 시작합니다.");
-				custList.add(custInput.insertCustomerData(scan));
+				//custList.add(custInput.insertCustomerData(scan));
+				custInput.insertCustomerData(scan);
 				System.out.println("고객정보를 입력했습니다.");
 				break;
 			case 'p' :

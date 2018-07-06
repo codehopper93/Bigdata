@@ -16,19 +16,23 @@ package com.first.aaa.dao;
 
 import java.util.Scanner;
 
-import com.first.aaa.model.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * CustomerInputData.java
  * @author "Baniota"
  */
 public class CustomerInputData {
-	public Customer  insertCustomerData(Scanner scan) {
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	public void  insertCustomerData(Scanner scan) {
 		
 		//IsVIP vip = new IsVIP();
 		//String input = scan.next();
 		//System.out.println("VIP입니까?(y/n) :");
-		
 		
 		System.out.print("이름 : ");	
 		String name = scan.next();
@@ -73,10 +77,12 @@ public class CustomerInputData {
 				System.out.println(birth_num);
 
 		}
-
-		//입력받은 데이터로 고객 객체를 생성
-		Customer cust = new Customer(name, gender, email, birthYear);
-		return cust;
+		String sql = "insert into customer (name, gender, "
+				+ "email, birthYear)"
+				+ "values ('"+ name+ "','"+gender +"','" +email+"','"+birthYear+"')";
+		jdbcTemplate.update(sql);
+		//jdbcTemplate.toString();
+		
 		
 	}
 		
